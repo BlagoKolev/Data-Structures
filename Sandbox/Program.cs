@@ -1,32 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Problem01.List;
+using System;
 
 
 
 
-var queue = new Problem03.Queue.Queue<int>();
-var defaultQueue = new System.Collections.Generic.Queue<int>();
-queue.Enqueue(1);   
-defaultQueue.Enqueue(1);
-
-queue.Enqueue(2);
-defaultQueue.Enqueue(2);
-
-queue.Enqueue(3);
-defaultQueue.Enqueue(3);
-
-queue.Enqueue(4);
-defaultQueue.Enqueue(4);
-
-queue.Enqueue(5);
-defaultQueue.Enqueue(5);
+var list = new Problem04.SinglyLinkedList.SinglyLinkedList<int>();
+//list.AddFirst(1);
+//list.AddFirst(2);
+//list.AddFirst(3);
+//list.AddFirst(4);
 
 
-for (int i = 0; i < 5; i++)
+var expected = new int[] { 3, 8, 1, 3, 8, 1, 6, 5, 7, 2, 9, 4, 3, 8, 1, 6, 5, 7, 2, 9, 4 };
+
+foreach (var num in expected)
 {
-    Console.WriteLine(queue.Dequeue());
-    Console.WriteLine(defaultQueue.Dequeue());
+    list.AddLast(num);
+
 }
+list.RemoveLast();
+list.RemoveLast();
+list.RemoveLast();
+
+Console.WriteLine(18);
+Console.WriteLine(list.Count);
+
+
+
+
 
 
 
