@@ -72,7 +72,7 @@
 
             while (current != null)
             {
-                yield return this.head.Item;
+                yield return current.Item;
                 current = current.Next;
             }
         }
