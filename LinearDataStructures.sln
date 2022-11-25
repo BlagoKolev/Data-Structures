@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.1.32407.343
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32407.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Problem01.List", "Problem01.List\Problem01.List.csproj", "{BB5B4640-1948-4544-AF84-4439C5066E68}"
 EndProject
@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Problem04.SinglyLinkedList"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Problem04.SinglyLinkedList.Tests", "SinglyLinkedList.Tests\Problem04.SinglyLinkedList.Tests.csproj", "{34AEEB4F-CA0A-41D0-9594-C4310694EFA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{E8C2CC82-D028-46F7-AB3F-2517EFC7A988}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.csproj", "{E8C2CC82-D028-46F7-AB3F-2517EFC7A988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularQueue", "CircularQueue\CircularQueue.csproj", "{FFC88A6C-F4DF-425D-B62F-9DED6F53647D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularQueue.Tests", "CircularQueue.Tests\CircularQueue.Tests.csproj", "{D64915F3-EBB3-4375-AE14-8CA0861B46A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{E8C2CC82-D028-46F7-AB3F-2517EFC7A988}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8C2CC82-D028-46F7-AB3F-2517EFC7A988}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8C2CC82-D028-46F7-AB3F-2517EFC7A988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC88A6C-F4DF-425D-B62F-9DED6F53647D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC88A6C-F4DF-425D-B62F-9DED6F53647D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC88A6C-F4DF-425D-B62F-9DED6F53647D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC88A6C-F4DF-425D-B62F-9DED6F53647D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64915F3-EBB3-4375-AE14-8CA0861B46A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64915F3-EBB3-4375-AE14-8CA0861B46A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64915F3-EBB3-4375-AE14-8CA0861B46A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64915F3-EBB3-4375-AE14-8CA0861B46A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
