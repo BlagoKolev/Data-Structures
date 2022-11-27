@@ -25,11 +25,13 @@
         {
             get
             {
-                throw new NotImplementedException();
+                ValidateIndex(index);
+                return this.items[index];
             }
             set
             {
-                throw new NotImplementedException();
+                ValidateIndex(index);
+                this.items[index] = value;
             }
         }
 
@@ -37,42 +39,123 @@
 
         public void Add(T item)
         {
-            throw new NotImplementedException();
+            if (CheckIsFull())
+            {
+                Grow();
+            }
+            if (this.Count == 0)
+            {
+                this.items[this.Count] = item;
+            }
+            else
+            {
+                for (int i = this.Count; i > 0; i--)
+                {
+                    this.items[i] = this.items[i - 1];
+                }
+                this.items[0] = item;
+            }
+            this.Count++;
         }
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (this.items[i].Equals(item))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public int IndexOf(T item)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i <= this.Count; i++)
+            {
+                if (this.items[i].Equals(item))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public void Insert(int index, T item)
         {
-            throw new NotImplementedException();
+            ValidateIndex(index);
+            if (CheckIsFull())
+            {
+                Grow();
+            }
+            for (int i = this.Count; i > index; i--)
+            {
+                this.items[i] = this.items[i - 1];
+            }
+            this.items[index] = item;
+            this.Count++;
         }
 
         public bool Remove(T item)
         {
-            throw new NotImplementedException();
+            var index = IndexOf(item);
+            if (index > -1)
+            {
+                for (int i = index; i < this.Count; i++)
+                {
+                    this.items[i] = this.items[i + 1];
+                }
+                this.Count--;
+                return true;
+            }
+            return false;
         }
 
         public void RemoveAt(int index)
         {
-            throw new NotImplementedException();
+            ValidateIndex(index);
+            for (int i = index; i < this.Count; i++)
+            {
+                this.items[i] = this.items[i + 1];
+            }
+            this.Count--;
         }
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < this.Count; i++)
+            {
+                yield return this.items[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
+        }
+
+        private bool CheckIsFull()
+        {
+            return this.items.Length == this.Count;
+        }
+
+        private void Grow()
+        {
+            var newLength = this.items.Length * 2;
+            var newArray = new T[newLength];
+            for (int i = 0; i < this.items.Length; i++)
+            {
+                newArray[i] = this.items[i];
+            }
+            this.items = newArray;
+        }
+        private void ValidateIndex(int index)
+        {
+            if (index < 0 || index >= this.Count)
+            {
+                throw new IndexOutOfRangeException("Index out of range.");
+            }
         }
     }
 }
